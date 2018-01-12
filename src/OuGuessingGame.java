@@ -8,6 +8,7 @@ public class OuGuessingGame extends NumberGame{
 
 	private int upperBound;
 	private int secret;
+	private int count = 0;
 	
 	/**
 	 * Set upperBound to 100 if upperBound haven't set before.
@@ -33,6 +34,7 @@ public class OuGuessingGame extends NumberGame{
 	@Override
 	public boolean guess(int answer){
 		if (answer == this.secret) {
+			count++;
     		return true;
     	}
     	if (answer < 3*this.secret/4) {
@@ -47,9 +49,13 @@ public class OuGuessingGame extends NumberGame{
     	else /* if (number > this.secret) */ {
     		setMessage("Just a little bit less.");
     	}
+    	count++;
     	return false;
 	}
 	
+	public int getCount(){
+		return count++;
+	}
 	public int getUpperBound(){
 		return upperBound;
 	}
