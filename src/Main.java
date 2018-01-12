@@ -9,7 +9,7 @@ public class Main {
 	public static void main(String[] args) {
 		// upper limit for secret number in guessing game
 		Scanner sc = new Scanner(System.in);
-		System.out.print("Input the maximum number: ");
+		System.out.print("Input the maximum number: ");// ask for the maximum number
 		int upperBound = sc.nextInt();
 		NumberGame game = new OuGuessingGame(upperBound); //Class guessing game
 		GameConsole ui = new GameConsole( );
