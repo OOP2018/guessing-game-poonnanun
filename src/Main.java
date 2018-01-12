@@ -13,10 +13,11 @@ public class Main {
 		int upperBound = sc.nextInt();
 		NumberGame game = new OuGuessingGame(upperBound); //Class guessing game
 		GameConsole ui = new GameConsole( );
-		int result = ui.play( game );
+//		int result = ui.play( game );
+		int result = GameSolver.play(game);
 		//TODO display the answer returned by play
 		System.out.println("Secret number is = "+result);
-		System.out.println("Count: "+((OuGuessingGame) game).getCount());
+		System.out.println("Count: "+ game.getCount());
 		//TODO display how many guesses the user made
 	}
 }

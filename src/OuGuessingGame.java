@@ -2,7 +2,6 @@ import java.util.Random;
 /**
  * Class about manager of guessing game.
  * @author Poonnanun Poonnopathum
- *
  */
 public class OuGuessingGame extends NumberGame{
 
@@ -41,20 +40,20 @@ public class OuGuessingGame extends NumberGame{
     		setMessage("That is too small.");
     	}
     	else if (answer < this.secret) {
-    		setMessage("Just a little bit more.");
+    		setMessage("Just a little bit too small.");
     	}
     	else if (answer > this.secret*4/3) {
     		setMessage("That is too large.");
     	}
     	else /* if (number > this.secret) */ {
-    		setMessage("Just a little bit less.");
+    		setMessage("Just a little bit too large.");
     	}
     	count++;
     	return false;
 	}
-	
+	@Override
 	public int getCount(){
-		return count++;
+		return count;
 	}
 	public int getUpperBound(){
 		return upperBound;
