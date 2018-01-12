@@ -19,7 +19,6 @@ public class GameConsole {
 			int guess = console.nextInt();
 			times ++;
 			boolean correct = game.guess(guess);
-			System.out.println( game.getMessage() );
 			if(correct == true) {
 				over = 1;
 				result[0] = guess;

@@ -13,7 +13,7 @@ public class OuGuessingGame extends NumberGame{
 		this.upperBound = upperBound;
 		Random rand = new Random();
 		this.secret = rand.nextInt(this.upperBound) + 1;
-		super.setMessage("No clue yet");
+		super.setMessage("Number is between 1-"+upperBound);
 	}
 	@Override
 	public boolean guess(int answer){
@@ -42,7 +42,7 @@ public class OuGuessingGame extends NumberGame{
 	
 	@Override
 	public String toString(){
-		return "Just guess the number";
+		return "Guess the number";
 	}
 	
 	
