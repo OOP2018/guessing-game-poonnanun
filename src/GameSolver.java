@@ -3,6 +3,7 @@ import java.util.Random;
 /**
  * Automatically find the answer to any numbergame.
  * @author Poonnanun Poonnopathum
+ * @return correct secret number
  */
 public class GameSolver {
 	
@@ -12,7 +13,6 @@ public class GameSolver {
 		int answer = guessNumber(upperBound, lowerBound, game);
 		return answer;
 	}
-	
 	
 	private static int guessNumber(int upperBound, int lowerBound, NumberGame game){
 		int num = lowerBound+(upperBound-lowerBound)/2;

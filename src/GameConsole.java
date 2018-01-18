@@ -2,7 +2,9 @@ import java.util.Scanner;
 
 /** 
  *  Play guessing game on the console.
- *  @param game is NumberGame object
+ *  @param game is NumberGame object.
+ *  @retrun the correct answer.
+ *  @author Poonnanun Poonnopathum
  */
 public class GameConsole {
 
