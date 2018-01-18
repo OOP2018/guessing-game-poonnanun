@@ -7,49 +7,26 @@ import java.util.Random;
 public class GameSolver {
 	
 	public static int play(NumberGame game){
-		Random rand = new Random();
-		int answer = 0;
 		int upperBound = game.getUpperBound();
-		int lowerBound = upperBound - game.getUpperBound()/10;
-		for(int z = 1; z<=9; z++){
-			lowerBound = upperBound - game.getUpperBound()/10;
-			answer = lowerBound;
-			if(game.guess(answer)==false){
-				String temp = game.getMessage();
-				if(temp.contains("small")){
-					answer = scopeRandom(upperBound, lowerBound, game);
-					break;
-				}
-				else if(temp.contains("large")){
-					upperBound -= game.getUpperBound()/10;
-					continue;
-				}
-			}
-			else{
-				break;
-			}
-		}
-		answer = scopeRandom(upperBound, lowerBound, game);
+		int lowerBound = 1;
+		int answer = guessNumber(upperBound, lowerBound, game);
 		return answer;
 	}
 	
-	public static int scopeRandom(int upperBound, int lowerBound, NumberGame game){
-		int answer = 0;
-		Random rand = new Random();
-		while(true){
-			answer = rand.nextInt(upperBound)+lowerBound;
-			if(game.guess(answer)==false){
-				if(game.getMessage().contains("small")){
-					lowerBound = answer;
-				}
-				else if(game.getMessage().contains("large")){
-					upperBound = answer;
-				}
-			}
-			else{
-				return answer;
-			}
+	
+	private static int guessNumber(int upperBound, int lowerBound, NumberGame game){
+		int num = lowerBound+(upperBound-lowerBound)/2;
+		if(game.guess(num)==true){
+			return num;
+		}
+		else if(game.getMessage().contains("small")){
+			return guessNumber(upperBound, num, game);
+		}
+		else if(game.getMessage().contains("large")){
+			return guessNumber(num, lowerBound, game);
+		}
+		else{
+			return 0;
 		}
 	}
-	
 }
