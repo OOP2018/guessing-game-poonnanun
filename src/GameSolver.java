@@ -6,6 +6,7 @@ import java.util.Random;
  */
 public class GameSolver {
 /**
+ * Initialize the automatic solve the game.
  * @param game is NumberGame object.
  * @return correct secret number
  */
@@ -16,6 +17,7 @@ public class GameSolver {
 		return answer;
 	}
 	/**
+	 * This method have for for call itself until it gets the correct number.
 	 * @param game is NumberGame object, upperBound is max value, lowerBound is lowest value.
 	 * @return correct secret number or exit if get error.
 	 */
