@@ -18,7 +18,7 @@ public class GameConsole {
 			System.out.print("Your answer: ");
 			int guess = console.nextInt();
 			boolean correct = game.guess(guess);
-			if(correct == true) {
+			if(correct) {
 				return guess;
 			}
 		}
