@@ -27,6 +27,9 @@ public class GameSolver {
 			return guessNumber(num, lowerBound, game);
 		}
 		else{
+			System.out.println("Something error please change message to small and large.");
+			System.out.println("System termitated");
+			System.exit(1);
 			return 0;
 		}
 	}
