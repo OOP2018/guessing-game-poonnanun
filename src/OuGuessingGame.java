@@ -28,7 +28,8 @@ public class OuGuessingGame extends NumberGame{
 	/**
 	 * Compare the number that we guess to the secret number and display the hint message
 	 * @param answer is the answer that player type.
-	 * @return true if it's correct, false if it's wrong.
+	 * @return true if it's correct, false if it's wrong,
+	 * 
 	 */
 	@Override
 	public boolean guess(int answer){
@@ -38,7 +39,7 @@ public class OuGuessingGame extends NumberGame{
     	}
     	if (answer < 3*this.secret/4) {
     		setMessage("That is too small.");
-    	}
+    	}	
     	else if (answer < this.secret) {
     		setMessage("Just a little bit too small.");
     	}
@@ -51,6 +52,10 @@ public class OuGuessingGame extends NumberGame{
     	count++;
     	return false;
 	}
+	/**
+	 * Count every time the player or bot guess.
+	 * @return count
+	 */
 	@Override
 	public int getCount(){
 		return count;

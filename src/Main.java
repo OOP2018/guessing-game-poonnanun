@@ -13,10 +13,10 @@ public class Main {
 		System.out.print("Input the maximum number: ");// ask for the maximum number
 		int upperBound = sc.nextInt();
 		NumberGame game = new OuGuessingGame(upperBound); //Class guessing game
-		GameConsole ui = new GameConsole( );
-		//TODO Choose one of the result the ui one is play by player but Gameslover one is auto slove.
+		GameConsole ui = new GameConsole();
+		GameSolver ai = new GameSolver();
 //		int result = ui.play( game );
-		int result = GameSolver.play(game);
+		int result = ai.play(game);
 		System.out.println("Secret number is = "+result);
 		System.out.println("Count: "+ game.getCount());
 	}
