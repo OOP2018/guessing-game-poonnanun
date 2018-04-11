@@ -1,4 +1,4 @@
-import java.util.Random;
+package game;
 
 /**
  * Automatically find the answer to any numbergame.
